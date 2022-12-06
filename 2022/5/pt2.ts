@@ -48,9 +48,10 @@ fs.readFile('./input.txt', 'utf8', (err: any, data: string) => {
         const target = parssedData[action.target];
         const count = action.count;
         const toMove = source.splice(source.length - count, count+1);
-        for (let i = toMove.length - 1; i >= 0; i--) {
-            target.push(toMove[i]);
-        }
+        // for (let i = toMove.length - 1; i >= 0; i--) {
+        //     target.push(toMove[i]);
+        // }
+        target.push(...toMove);
     }
 
     let output = ''
