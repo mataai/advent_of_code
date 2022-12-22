@@ -6,25 +6,21 @@ fs.readFile('./input.txt', 'utf8', (err: any, fileData: string) => {
         console.error(err);
     }
 
-    let stack = [];
-    for (let i = 0; i < fileData.length; i++) {
-        let isMatch = false;
-        for (let y = 1; y <= 14; y++) {
-            if (fileData[i] === fileData[i + y]) {
-                isMatch = true;
-                break;
-            }
+    // console.log(fileData)
+    for (let i = 0; i <= fileData.length -14; i++) {
+        let stack = [];
+        for (let y = i; y < i+14; y++) {
+            if (!stack.includes(fileData[y])) {
+                stack.push(fileData[y]);
+            } 
         }
-        if (!isMatch) {
-            stack.push(fileData[i]);
-        } else {
-            stack = []
-        }
+        // console.log(stack.length)
         if (stack.length === 14) {
-            console.log(stack)
-            console.log(i - 1)
+            console.log(stack.join(''))
+            console.log(i+14) 
             break;
         }
+        
     }
 
 });
