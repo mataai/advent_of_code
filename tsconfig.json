@@ -6,11 +6,14 @@
             "ES2021",
             "DOM",
         ],
-        "types": ["node"],
+        "types": [
+            "node"
+        ],
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
+        "outDir": "out",
         "esModuleInterop": true,
     },
 }
